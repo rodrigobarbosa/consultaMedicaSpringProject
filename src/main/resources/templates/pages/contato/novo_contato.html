@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layoutPadrao">
+
+<section layout:fragment="conteudo">
+
+	<div id="page-wrapper">
+		<div class="row top-header">
+			<div class="col-lg-12">
+				<h4 class="page-header">Novo Contato</h4>
+			</div>
+		</div>
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+			<li class="breadcrumb-item active">Contatos</li>
+		</ol>
+		<!-- FORUMALARIO DE CADASTRO DE CONTATO-->
+		
+		<div class="alert alert-success" th:if="${not #strings.isEmpty(mensagem)}">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+			<span th:text="${mensagem}"></span>
+   		</div>
+		
+		<form th:object="${contato}" th:action="@{/contatos/save}" method="POST" role="form">
+		
+		<input id="id" type="hidden" class="form-control" th:field="*{id}"/>
+		<div class="form-group">
+	        <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+	            <div th:each="detailedError : ${#fields.detailedErrors()}">
+		                <span th:text="${detailedError.message}"></span>
+		            </div>
+		        </div>
+		    </div> 
+		
+		<div class="form-group" th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
+			<label>Nome</label> 
+			<input id="name" class="form-control" type="text" name="nome"  th:field="*{nome}"/>
+		</div>
+		
+		<div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error'">
+			<label>E-mail</label> 
+			<input class="form-control" type="text" name="email"  th:field="*{email}"/>
+		</div>
+		
+		<div class="form-group">
+			<button type="submit" class="btn btn-outline btn-primary">Salvar</button>
+			<a th:href="@{/contatos}" type="button" class="btn btn-outline btn-success">Contatos</a>
+		</div>
+		</form>
+	</div>
+</section>
+</html>

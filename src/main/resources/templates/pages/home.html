@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en"
+	xmlns:th="http://www.thymeleaf.org">
+	
+   <div th:include="layout/style :: style"></div>
+  <body>
+  		<div id="wrapper">
+	   		 <div th:include="layout/header :: header"></div>
+		     	 <div th:include="layout/menu :: menu" class="menu"></div>
+		     	 <!-- CONTEUDO DAS PAGINAS AQUI ! -->
+		     	  <div th:include="layout/homeConteudo :: homeConteudo"></div>
+	     </div>
+    <div th:include="layout/js :: js"></div>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+  
+    <div th:fragment="menu">
+    		<div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a th:href="@{/}"><i class="fa fa-dashboard fa-fw"></i> Menu</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/contatos}">Contatos</a>
+                                </li>
+                                 <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/contatos}">Agendamentos</a>
+                                </li>
+                                 <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/medicos}">Médicos</a>
+                                </li>
+                                <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/pacientes}">Pacientes</a>
+                                </li>
+                                
+                                <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/usuarios}">Usuários</a>
+                                </li>
+                                <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/outros/morris}">Morris</a>
+                                </li>
+                                 <li sec:authorize="hasAuthority('ADMIN')">
+                                    <a th:href="@{/outros/flot}">Float</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a th:href="@{/outros/tables.html}"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        </li>
+                        <li>
+                            <a th:href="@{/outros/forms.html}"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw">
+                            </i> + Exemplos<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a th:href="@{/outros/panels-wells.html}">Panels and Wells</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/outros/buttons.html}">Buttons</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/outros/notifications.html}">Notifications</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/outros/typography.html}">Typography</a>
+                                </li>
+                                <li>
+                                    <a th:href="@{/outros/icons.html}"> Icons</a>
+                                </li>
+                                <li>
+                                   <a th:href="@{/outros/grid.html}">Grid</a>
+                                </li>
+                                  <li>
+                                   <a th:href="@{/outros/morris.html}">Morris.js</a>
+                                </li>
+                                  <li>
+                                   <a th:href="@{/outros/flot.html}">Flot</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+  	</div>
+</html>
+
+
+ 
