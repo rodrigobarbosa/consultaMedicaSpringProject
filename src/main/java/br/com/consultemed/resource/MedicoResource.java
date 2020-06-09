@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.consultemed.model.Medico;
+import br.com.consultemed.service.MedicoService;
 
 @Resource
 @RestController

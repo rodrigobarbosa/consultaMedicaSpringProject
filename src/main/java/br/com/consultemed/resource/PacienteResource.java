@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.consultemed.model.Paciente;
+import br.com.consultemed.service.PacienteService;
 
 @Resource
 @RestController

@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layoutPadrao">
+
+<section layout:fragment="conteudo">
+
+	<div id="page-wrapper">
+       <div class="row">
+           <div class="col-lg-12">
+               <h4 class="page-header">Usuários</h4>
+           </div>
+       </div>
+       
+        <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+			<li class="breadcrumb-item active">Usuário</li>
+			
+		</ol>
+		<div class="alert alert-success" th:if="${not #strings.isEmpty(mensagem)}">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+			<span th:text="${mensagem}"></span>
+   		</div>
+   		
+   		<div class="alert alert-success" th:if="${not #strings.isEmpty(removido)}">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+			<span th:text="${removido}"></span>
+   		</div>
+   		
+		<div class="table-responsive">
+			<table class="table table-striped">
+					<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Login</th>
+						<th>DataCadastro</th>
+						<th class="th-acoes">Ações</th>
+					</tr>
+				</thead>
+				<tbody >
+				      <tr th:each="u: ${usuarios}">  
+				        <td th:text="${u.id}"></td>
+				        <td th:text="${u.nome}"></td>
+				        <td th:text="${u.login}"></td>
+				        <td th:text="${u.dataCadastro}"></td>
+				        <td>
+				        	<a th:href="@{usuarios/edit/{id}(id=${u.id})}" type="button" class="btn btn-outline btn-primary">Editar</a>
+				        	<a th:href="@{usuarios/delete/{id}(id=${u.id})}" type="button" class="btn btn-outline btn-danger">Excluir</a>
+				        </td>
+				      </tr>
+				</tbody>
+			</table>
+			<a th:href="@{/usuarios/novo}" type="button" class="btn btn-primary btn-sm">Novo Usuário</a>
+		</div>
+		
+			
+    </div>
+    <div id="page-wrapper">
+    </div>
+</section>
+</html>

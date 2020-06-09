@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.consultemed.model.Contato;
+import br.com.consultemed.service.ContatoService;
 import lombok.extern.slf4j.Slf4j;
 
 @Resource

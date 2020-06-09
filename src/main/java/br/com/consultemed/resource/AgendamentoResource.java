@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.consultemed.model.Consulta;
 import br.com.consultemed.request.AgendamentoRequest;
+import br.com.consultemed.service.AgendamentoService;
 
 @Resource
 @RestController

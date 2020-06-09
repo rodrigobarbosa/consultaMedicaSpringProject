@@ -1,5 +1,13 @@
 package br.com.consultemed.service;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.consultemed.model.Paciente;
+import br.com.consultemed.repository.PacienteRepository;
+
 @Service
 public class PacienteService {
 
